@@ -48,6 +48,26 @@ Five defect classes were defined:
 - **Preserved original resolution** (800×600) to avoid losing fine defect detail
 - **Converted to greyscale** to standardise ABS/PLA colour differences
 
+
+##  Included G-code Files (for #3DBenchy Dataset)
+
+The `benchy/` folder also contains the exact **G-code files** used to produce all #3DBenchy prints in this study. These files contain the printing parameters responsible for generating each defect class and ensure full experimental reproducibility.
+
+### Purpose of the G-code Files
+
+The G-code files are included to:
+
+- Reproduce the exact printing conditions used in the dataset  
+- Show how parameter variations (temperature, flow rate, speed, cooling, adhesion settings, etc.) were used to intentionally induce each defect  
+- Support research into the relationship between print parameters and specific defect types  
+- Provide transparency for fine-tuning, benchmarking, and vision-based defect classification tasks  
+
+Each G-code file corresponds directly to one defect class and is located in:
+
+```
+datasets/benchy/gcode/
+```
+
 ---
 
 ## MVTec AD — Screw Subset
@@ -99,20 +119,30 @@ Following OpenAI vision-model recommendations:
 Minimal preprocessing ensured anomaly details remained intact.
 
 
+
+
 ## Directory Structure (Example)
 
 ```
 datasets/
 │
 ├── benchy/
-│   ├── blobs/
-│   ├── cracks/
-│   ├── no_anomaly/
-│   ├── stringing/
-│   └── warping/
+│   ├── Images/
+│   │   ├── Blobs/
+│   │   ├── Cracks/
+│   │   ├── No_anomaly/
+│   │   ├── Stringing/
+│   │   └── Warping/
+│   │
+│   ├── G-code/
+│   │   ├── Blobs
+│   │   ├── Cracks
+│   │   ├── No_anomaly
+│   │   ├── Stringing
+│   │   └── Warping
 │
-└── mvtec_screw/
-    ├── good/
+└── Screw_MvTec_AD/
+    ├── no_anomaly/
     ├── manipulated_front/
     ├── scratch_head/
     ├── scratch_neck/
